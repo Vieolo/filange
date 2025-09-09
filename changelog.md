@@ -1,5 +1,10 @@
 # Change Log
 
+## v0.2.0 (2025-09-09)
+
+#### Breaking change
+Renamed the project to `filange`
+
 ## v0.1.2 (2024-01-15)
 - Added `DownloadFileToFile` function
 - Added `WriteCsvFile` function

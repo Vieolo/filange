@@ -1,6 +1,6 @@
-# File Management (v0.1.2)
+# Filange
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/vieolo/file-management.svg)](https://pkg.go.dev/github.com/vieolo/file-management)
+[![Go Reference](https://pkg.go.dev/badge/github.com/vieolo/filange.svg)](https://pkg.go.dev/github.com/vieolo/filange)
 
 Common functionalities in managing and handling files in GO.
 

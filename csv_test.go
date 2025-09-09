@@ -1,15 +1,15 @@
-package filemanagement_test
+package filange_test
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	fm "github.com/vieolo/file-management"
+	"github.com/vieolo/filange"
 )
 
 func TestReadCSV(t *testing.T) {
 
-	restult, err := fm.ReadCsvFile("./files/weekday.csv")
+	restult, err := filange.ReadCsvFile("./files/weekday.csv")
 
 	assert.Nil(t, err)
 

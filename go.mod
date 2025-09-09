@@ -1,4 +1,4 @@
-module github.com/vieolo/file-management
+module github.com/vieolo/filange
 
 go 1.21
 

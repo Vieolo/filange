@@ -1,11 +1,9 @@
 package filange
 
 import (
-	"fmt"
 	"io"
 	"os"
 	"path/filepath"
-	"syscall"
 
 	"golang.org/x/exp/slices"
 )
@@ -28,11 +26,6 @@ func CopyDirectory(scrDir string, dest string, ignoreList []string) error {
 			return err
 		}
 
-		stat, ok := fileInfo.Sys().(*syscall.Stat_t)
-		if !ok {
-			return fmt.Errorf("failed to get raw syscall.Stat_t data for '%s'", sourcePath)
-		}
-
 		switch fileInfo.Mode() & os.ModeType {
 		case os.ModeDir:
 			if err := CreateDirIfNotExists(destPath, 0755); err != nil {
@@ -51,7 +44,7 @@ func CopyDirectory(scrDir string, dest string, ignoreList []string) error {
 			}
 		}
 
-		if err := os.Lchown(destPath, int(stat.Uid), int(stat.Gid)); err != nil {
+		if err := preserveOwnership(sourcePath, destPath, fileInfo); err != nil {
 			return err
 		}
 

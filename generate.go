@@ -12,7 +12,7 @@ func CreateDirIfNotExists(dir string, perm os.FileMode) error {
 	}
 
 	if err := os.MkdirAll(dir, perm); err != nil {
-		return fmt.Errorf("failed to create directory: '%s', error: '%s'", dir, err.Error())
+		return fmt.Errorf("failed to create directory: %s: '%w'", dir, err)
 	}
 
 	return nil

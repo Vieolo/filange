@@ -1,0 +1,7 @@
+name: filange
+description: File manipulation utility functions
+version: 0.2.1
+
+commands:
+  # build: go build main.go
+  # test: go test
